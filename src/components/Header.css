@@ -1,0 +1,72 @@
+.header { /* 3.2 */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__logo { /* 3.2 */
+    width: 100px;
+    object-fit: contain; /* keeps aspect ratio */
+    margin: 0px 20px;
+    margin-top: 18px;
+}
+
+.header__searchIcon { /* 3.3 search icon was not visible... background color made it visible */
+    padding: 5px;
+    height: 22px !important;
+    background-color: #cd9042;
+}
+
+.header__searchContainer { /* 3.3 search icon was not aligned.... this makes it aligned with search bar */
+    display: flex;
+    align-items: center;
+    flex: 1; /* ?? for flex items to stretch to max */
+    border-radius: 24px;
+}
+
+.header__searchInput {/* 3.3 */
+ height: 12px;
+ padding: 10px;
+ border: none;
+ width: 100%; /* now search input is stretched to max */
+}
+
+.header__option {/* 3.3 options on right are not visible and out of alignment */
+display: flex;
+flex-direction: column;
+color: white;
+margin-left: 10px;
+margin-right: 10px;
+
+}
+
+.header__nav {
+    /* 3.3 still options were cluttered... so we target its container with flex */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header__optionLineOne {/* 3.3 to make top span of option light font */
+    font-size: 10px;
+}
+
+.header__optionLineTwo { /* 3.3 to make bottom span of option bigger */
+    font-size: 13px; 
+    font-weight: 800;
+}
+
+.header__optionBasket { /* 3.3 basket and content was invisible and out of alignment */
+    display: flex;
+    align-items: center;
+    color: white;
+    
+}
+
+.header__basketCount { /* 3.3 to give space around the count number */
+    margin-left: 10px;
+    margin-right: 10px;
+}

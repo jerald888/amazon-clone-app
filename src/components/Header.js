@@ -8,7 +8,7 @@ Header () {
   return (
     <div className='header'>
         <div className='header__logoContainer'>
-        <img src="https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-symbol-png-logo-vector-9.png" alt="amazon logo" className='header__logo' />
+        <img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" className='header__logo' />
         </div>
 
         <div className='header__searchContainer'> 

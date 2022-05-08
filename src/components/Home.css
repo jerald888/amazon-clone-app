@@ -1,0 +1,25 @@
+.home { /*  3.5 (not mistake) always do this to keep the entire content to center and prevent stretching with increase in screen size*/
+display: flex;
+justify-content: center;
+
+margin-left: auto;
+margin-right: auto;
+max-width: 1500px;
+}
+
+
+
+
+.home__image {/* 3.4 banner image styling */
+width: 100%;
+z-index: -1; /* products should overlap this banner */
+margin-bottom: -150px; /* to have products overlap the banner image  */
+mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0)); /* to have fade effect on bottom **** the attribute is mask-image */
+}
+
+.home__row {/* 3.5 (not mistake)  */
+display: flex;
+z-index: 1;
+margin-left: 5px;
+margin-right: 5px;
+} 

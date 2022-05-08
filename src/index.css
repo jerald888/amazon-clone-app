@@ -2,6 +2,7 @@
   margin: 0px; /* 3.txt */
 }
 body {
+  background-color: rgb(234, 237, 237); /* product bacground is white... so to make product component stand out, we make body background grey 3.5 */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

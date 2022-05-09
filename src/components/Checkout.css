@@ -1,0 +1,17 @@
+.checkout {/* 3.8 */
+display: flex;
+padding: 20px;
+background-color: white;
+height: max-content; /* ?? */
+}
+
+.checkout__ad { /* 3.8 */
+width: 100%;
+margin-bottom: 10px;
+}
+
+.checkout__title {/* 3.8 */
+margin-right: 10px;
+padding: 10px;
+border-bottom: 1px solid lightgrey; /* 3.8 to have a grey line at bottom of the title */
+}

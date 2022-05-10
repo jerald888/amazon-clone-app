@@ -75,6 +75,7 @@ function Home() /* 3.4 */ {
           {/* 3.5 */}
         </div>
       </div>
+    {console.log("yay home")}
     </div>
   );
 }

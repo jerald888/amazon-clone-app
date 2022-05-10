@@ -1,8 +1,9 @@
-import React from 'react' // 3.8
-import "./Checkout.css" // 3.8
+import React from 'react' // 4.1
+import "./Checkout.css" // 4.1
+import Subtotal from './Subtotal' // 4.3
 
 
-function Checkout() { /* 3.8 */
+function Checkout() { /* 4.1 */
   return (
       <div className='checkout'>
 
@@ -12,13 +13,13 @@ function Checkout() { /* 3.8 */
       <div>
           <h2 className='checkout__title'>Your shopping Basket</h2>
       </div>
-      
+
       </div>
 
       <div className='checkout__right'>
-          <h2>total price here</h2>
+          <Subtotal/>
       </div>
-
+        {console.log("yay checkout")}
       </div>
 
       

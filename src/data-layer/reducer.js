@@ -12,7 +12,7 @@ export const getBasketTotal = (basket) =>
 
 const reducer = (state, action) => { /* 4.5 */
 console.log({action})
-    switch(action.type) {
+    switch(action.type) { /* 4.5 */
         case "ADD_TO_BASKET":
             return {
                 ...state,
@@ -21,6 +21,29 @@ console.log({action})
 
         default:
             return state;
+        
+        case "REMOVE_FROM_BASKET": /* 6.3 */
+            let newBasket = [...state.basket]; // we make a new array because, we use SPLICE array method which will modify the original array
+
+            let index = state.basket.findIndex(
+                (basketItem) =>/*  { */
+                    basketItem.id === action.id
+                /* } */ // never put a curly {} around a single line arrow function
+            )  /* 6.3 */
+
+            if ( index >= 0 ) {
+                    newBasket.splice( index, 1 )
+            } else {
+                console.warn(`can't remove the product (id : ${action.id}) as it is not inside the basket!`)
+            }
+
+             /* 6.3 */
+
+            return {
+                ...state, 
+                basket: newBasket
+            }  /* 6.3 */
+
     }
 }
 

@@ -2,9 +2,22 @@ import React from 'react'
 
 import "./CheckoutProduct.css" // 6.2
 
+import { useStateValue } from '../data-layer/StateProvider' // 6.3
 
 
-function CheckoutProduct({id, image, title, price, rating}) { /* 6.2 **** don't forget curly{}.... else won't render */   
+function CheckoutProduct({id, image, title, price, rating}) { /* 6.2 **** don't forget curly{}.... else won't render */  
+
+const [{bucket}, dispatch] = useStateValue() // 6.3
+
+const removeFromBasket = () => { /* 6.3 */
+// alert("removeformbass")
+    dispatch({
+        type: "REMOVE_FROM_BASKET",
+        id: id
+    })
+}
+
+
 
   return ( /* 6.2 */
     <div className='checkoutProduct'>
@@ -27,7 +40,8 @@ function CheckoutProduct({id, image, title, price, rating}) { /* 6.2 **** don't 
             ) )} 
         </div>
 
-        <button>Remove from Basket</button>
+        <button onClick = {removeFromBasket} >Remove from Basket</button>
+        {/* 6.3 don't put () for an arrow function else repeats alert with out clickink */}
         <br/>
         <br/>
         <br/>

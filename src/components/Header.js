@@ -34,10 +34,13 @@ Header () {
         </div>
 
         <div className='header__nav'>
+            <Link to = "/login"> {/* 7.1 */}
+
             <div className='header__option'> {/* 3.3 */}
                 <span className='header__optionLineOne'>Hello Guest</span>
                 <span className='header__optionLineTwo'>Sign In</span>
             </div>
+            </Link>
 
             <div className='header__option'> {/* 3.3 */}
                 <span className='header__optionLineOne'>Returns</span>

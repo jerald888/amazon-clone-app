@@ -2,14 +2,14 @@ import React from 'react'
 import "./Login.css" // 7.1
 import {Link} from "react-router-dom" // 7.1
 import {useState} from "react" // 7.1
-import { auth } from '../firebase' // 7.3
+import { auth } from '../firebase' // 8.1
 
-import {useNavigate} from "react-router-dom" // 7.3
+import {useNavigate} from "react-router-dom" // 8.1
 
 
 function Login() { /* 7.1 */
 
-const navigate = useNavigate() // 7.3
+const navigate = useNavigate() // 8.1
 
 const [email, setEmail] = useState("") // 7.1
 const [password, setPassword] = useState("") // 7.1
@@ -20,12 +20,12 @@ const signIn = (e) => { /* 7.1 */
 
     e.preventDefault() /* 7.1 */
 
-    auth /* 7.3 */
+    auth /* 8.1 */
     .signInWithEmailAndPassword(email, password)
-    .then((auth) => { /* 7.3 */
+    .then((auth) => { /* 8.1 */
         navigate('/') 
     })
-    .catch((error) => alert(error.message)) /* 7.3 */
+    .catch((error) => alert(error.message)) /* 8.1 */
 
     // FIREBASE CODE HERE
 } // 7.1 to prevent reload (on signin button)
@@ -39,16 +39,16 @@ const register = (e) => { /* 7.1 */
     e.preventDefault()
 
     auth
-    .createUserWithEmailAndPassword(email, password) /* 7.3 */
-    .then((auth) => { /* 7.3 */
+    .createUserWithEmailAndPassword(email, password) /* 8.1 */
+    .then((auth) => { /* 8.1 */
         console.log(auth)
 
-        if (auth) { /* 7.3 */
-            navigate("/") /* 7.3 */
+        if (auth) { /* 8.1 */
+            navigate("/") /* 8.1 */
         }
 
     })
-    .catch((error) => alert(error.message)) /* 7.3 */
+    .catch((error) => alert(error.message)) /* 8.1 */
 
 
     // FIREBASE CODE HERE

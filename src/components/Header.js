@@ -13,7 +13,7 @@ import { auth } from '../firebase';
 function 
 Header () {
 
-    const [ {basket, user /* 7.5 */}, dispatch] = useStateValue(); // 4.7.... dispatch is optional
+    const [ {basket, user /* 8.3 */}, dispatch] = useStateValue(); // 4.7.... dispatch is optional
     // curly {} around the basket is important else count won't work
 
     const handleAuthentication = () => {
@@ -39,13 +39,13 @@ Header () {
         </div>
 
         <div className='header__nav'>
-            <Link to = {!user && "./login"} > {/* 7.1 */} {/* 7.6 !user  */}
+            <Link to = {!user && "./login"} > {/* 7.1 */} {/* 8.4 !user  */}
 
             <div className='header__option'> {/* 3.3 */}
                 <span className='header__optionLineOne'>Hello {user? user?.email : "Guest"}</span>
                 <span 
                 onClick = {handleAuthentication}
-                className='header__optionLineTwo'>{user ? "Sign Out" : "Sign In"} {/* 7.5 */}</span> {/* 7.6 onclick */}
+                className='header__optionLineTwo'>{user ? "Sign Out" : "Sign In"} {/* 8.3 */}</span> {/* 8.4 onclick */}
             </div>
             </Link>
 

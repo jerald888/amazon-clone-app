@@ -1,6 +1,6 @@
-import firebase from 'firebase/compat/app'; // 7.2
-import 'firebase/compat/auth'; // 7.2
-import 'firebase/compat/firestore'; // 7.2
+import firebase from 'firebase/compat/app'; // 2
+import 'firebase/compat/auth'; // 2
+import 'firebase/compat/firestore'; // 2
 
 
 
@@ -11,7 +11,7 @@ const firebaseConfig = {
     storageBucket: "clone-app-55d61.appspot.com",
     messagingSenderId: "117894843595",
     appId: "1:117894843595:web:dbe2a0c3046bdce59a9f4e"
-  };
+  }; // 2
 
   const firebaseApp = firebase.initializeApp(firebaseConfig); // 7.2
 

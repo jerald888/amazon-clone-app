@@ -2,27 +2,62 @@ import React from 'react'
 import "./Login.css" // 7.1
 import {Link} from "react-router-dom" // 7.1
 import {useState} from "react" // 7.1
+import { auth } from '../firebase' // 7.3
+
+import {useNavigate} from "react-router-dom" // 7.3
 
 
 function Login() { /* 7.1 */
 
+const navigate = useNavigate() // 7.3
+
 const [email, setEmail] = useState("") // 7.1
 const [password, setPassword] = useState("") // 7.1
 
-const signIn = (e) => {
 
-    e.preventDefault()
-    
+
+const signIn = (e) => { /* 7.1 */
+
+    e.preventDefault() /* 7.1 */
+
+    auth /* 7.3 */
+    .signInWithEmailAndPassword(email, password)
+    .then((auth) => { /* 7.3 */
+        navigate('/') 
+    })
+    .catch((error) => alert(error.message)) /* 7.3 */
+
     // FIREBASE CODE HERE
 } // 7.1 to prevent reload (on signin button)
 
-const register = (e) => {
+
+
+
+
+const register = (e) => { /* 7.1 */
 
     e.preventDefault()
+
+    auth
+    .createUserWithEmailAndPassword(email, password) /* 7.3 */
+    .then((auth) => { /* 7.3 */
+        console.log(auth)
+
+        if (auth) { /* 7.3 */
+            navigate("/") /* 7.3 */
+        }
+
+    })
+    .catch((error) => alert(error.message)) /* 7.3 */
+
 
     // FIREBASE CODE HERE
 }
   // 7.1 to prevent reload (on create account button)
+
+
+
+
 
   return (
     <div className='login'>

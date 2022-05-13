@@ -6,14 +6,19 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'; // 3.3
 import {Link} from "react-router-dom" // 4.2
 
 import {useStateValue} from "../data-layer/StateProvider" // 4.7
+import { auth } from '../firebase';
 
 
 
 function 
 Header () {
 
-    const [ {basket}, dispatch] = useStateValue(); // 4.7.... dispatch is optional
+    const [ {basket, user /* 7.5 */}, dispatch] = useStateValue(); // 4.7.... dispatch is optional
     // curly {} around the basket is important else count won't work
+
+    const handleAuthentication = () => {
+        auth.signOut()
+    }
 
 
   return (
@@ -34,11 +39,13 @@ Header () {
         </div>
 
         <div className='header__nav'>
-            <Link to = "/login"> {/* 7.1 */}
+            <Link to = {!user && "./login"} > {/* 7.1 */} {/* 7.6 !user  */}
 
             <div className='header__option'> {/* 3.3 */}
-                <span className='header__optionLineOne'>Hello Guest</span>
-                <span className='header__optionLineTwo'>Sign In</span>
+                <span className='header__optionLineOne'>Hello {user? user?.email : "Guest"}</span>
+                <span 
+                onClick = {handleAuthentication}
+                className='header__optionLineTwo'>{user ? "Sign Out" : "Sign In"} {/* 7.5 */}</span> {/* 7.6 onclick */}
             </div>
             </Link>
 

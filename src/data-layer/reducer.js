@@ -1,5 +1,6 @@
 export const initialState = {
     basket: [], /* 4.5 */
+    user: null /* 7.4 */
 }; /* 4.5 */
 
 // 6.1 selector 
@@ -43,6 +44,12 @@ console.log({action})
                 ...state, 
                 basket: newBasket
             }  /* 6.3 */
+        
+        case "SET_USER": /* 7.4 */
+            return { /* 7.4 */
+                ...state,
+                user: action.user
+            }
 
     }
 }

@@ -42,11 +42,7 @@ const removeFromBasket = () => { /* 6.3 */
 
         <button onClick = {removeFromBasket} >Remove from Basket</button>
         {/* 6.3 don't put () for an arrow function else repeats alert with out clickink */}
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <hr/>
+       
 
 
         </div> {/* 6.2 */}

@@ -1,0 +1,36 @@
+.payment__container { /* 15.2 */
+    background-color: white;
+
+}
+
+.payment__container > h1 {
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+    background-color: rgb(234, 237, 237);
+    border-bottom: 1px solid lightgray;
+}
+
+.payment__container > h1 a {  /* 15.2 to remove the link decoration */
+    text-decoration: none;
+}
+
+.payment__section {  /* 15.2 */
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.payment__title {  /* 15.2 */
+    flex: 0.2; /* will occupy 20% space */
+}
+
+.payment__address, .payment__items {  /* 15.2 */
+    flex: 0.8; /* will occupy 80% space */
+}
+
+
+
+

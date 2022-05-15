@@ -8,7 +8,10 @@ import { auth } from './firebase'; // 8.2
 import {useEffect} from "react" // 8.2
 import { useStateValue } from './data-layer/StateProvider'; // 8.2
 
-import Login  from './components/Login';
+import Login  from './components/Login'; // 7.1
+
+import Payment from './components/Payment'; // 15.1
+
 function App() { 
 
   const [{}, dispatch] = useStateValue() // 8.2
@@ -45,6 +48,11 @@ function App() {
       {/* <Header/> 3.8  */}
 
       <Routes> {/* 3.7 */}
+
+      <Route 
+      path='/payment'
+      element = {[<Header/>, <Payment/>]}
+      /> {/* 15.1 */}
 
       <Route
       path = "/login"

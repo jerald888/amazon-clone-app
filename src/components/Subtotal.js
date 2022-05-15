@@ -6,9 +6,14 @@ import { useStateValue } from '../data-layer/StateProvider'; // 5.1
 
 import { getBasketTotal } from '../data-layer/reducer'; // 6.1
 
+import {useNavigate} from "react-router-dom" // 15.1
+
 
 
 function Subtotal() { /* 4.3 */
+
+const navigate = useNavigate() // 15.1
+
 
  const [{basket}, dispatch] = useStateValue() // 5.1 and 6.1
 
@@ -36,7 +41,7 @@ function Subtotal() { /* 4.3 */
         
         /> {/* 4.3 */}
 
-        <button>Proceed to Checkout</button> {/* 4.3 */}
+        <button onClick={() => navigate("/payment")}>Proceed to Checkout</button> {/* 4.3 */} {/* 15.1 onclick  navigate */}
     
     </div>
   )

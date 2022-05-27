@@ -1,6 +1,6 @@
 import React from 'react' 
 import "./Subtotal.css"
-import CurrencyFormat from "react-currency-format"; // 4.3 **** import linke has no {} if {} then white page error
+import CurrencyFormat from "react-currency-format"; // 4.3 **** import link has no {} if {} then white page error
 
 import { useStateValue } from '../data-layer/StateProvider'; // 5.1
 

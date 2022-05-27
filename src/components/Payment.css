@@ -27,9 +27,11 @@
     flex: 0.2; /* will occupy 20% space */
 }
 
-.payment__address, .payment__items {  /* 15.2 */
-    flex: 0.8; /* will occupy 80% space */
+.payment__address, .payment__items, .payment__details /* 16.1 */  {  /* 15.2 */
+    flex: 0.8 ; /* will occupy 80% space */
 }
+
+
 
 
 

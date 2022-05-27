@@ -12,7 +12,15 @@ import Login  from './components/Login'; // 7.1
 
 import Payment from './components/Payment'; // 15.1
 
+import {loadStripe} from "@stripe/stripe-js" // 16.1
+
+import {Elements} from "@stripe/react-stripe-js" // 16.1
+import Orders from './components/Orders'; /* 17.2 */
+
+const stripePromise = loadStripe("pk_test_51L0WEXSC7n43Oc1JVFhUuC687MBxz4romAZe2VJcsnchWjtF70hFyejAl2E74EPgbNvgnOFL9RTaaxuf9TiBFSaR00Vxkb2io3") // 16.1 stripe publishable key
+
 function App() { 
+  
 
   const [{}, dispatch] = useStateValue() // 8.2
 
@@ -48,11 +56,18 @@ function App() {
       {/* <Header/> 3.8  */}
 
       <Routes> {/* 3.7 */}
+      
+      <Route
+      path="/orders"
+      element = {[<Header/>, <Orders/>]}
+      /> {/* 17.2  */}
 
       <Route 
       path='/payment'
-      element = {[<Header/>, <Payment/>]}
+      element = {[<Header/>, <Elements stripe = {stripePromise}> <Payment/> </Elements>]}
       /> {/* 15.1 */}
+
+    
 
       <Route
       path = "/login"

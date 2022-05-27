@@ -51,6 +51,12 @@ console.log({action})
                 user: action.user
             }
 
+        case "EMPTY_BASKET": /* 17.1 */
+            return { 
+            ...state,
+            basket: []
+            }
+
     }
 }
 

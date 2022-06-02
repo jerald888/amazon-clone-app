@@ -39,7 +39,7 @@ Header () {
         </div>
 
         <div className='header__nav'>
-            <Link to = {!user && "./login"} > {/* 7.1 */} {/* 8.4 !user  */}
+            <Link to = {!user && "/login"} > {/* 7.1 */} {/* 8.4 !user  */}
 
             <div className='header__option'> {/* 3.3 */}
                 <span className='header__optionLineOne'>Hello {user? user?.email : "Guest"}</span>
@@ -49,11 +49,14 @@ Header () {
             </div>
             </Link>
 
+            <Link to={"/orders"}> {/* 17.5 wrapped the returns and orders inside link tag to route to orders page */}
+            
             <div className='header__option'> {/* 3.3 */}
                 <span className='header__optionLineOne'>Returns</span>
                 <span className='header__optionLineTwo'>& Orders</span>
 
             </div>
+            </Link>
 
             <div className='header__option'> {/* 3.3 */}
                 <span className='header__optionLineOne'>Your</span>

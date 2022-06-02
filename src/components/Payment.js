@@ -17,6 +17,8 @@ import instance from '../axios/axios'; // 16.3
 
 import { useNavigate } from 'react-router-dom'; // 16.4
 
+import { db } from '../firebase'; // 17.3
+
 
 
 function Payment() { /* 15.1 */
@@ -71,6 +73,20 @@ const handleSubmit = async /* 16.3 */ (e) => {
         }
     }).then(({paymentIntent}) => {  /* 16.4 */
         // paymentIntent = payment confirmation
+
+        // console.log(paymentIntent)
+
+        db /* 17.3 */
+         .collection("users")  /* 17.3 */
+         .doc(user?.uid)  /* 17.3 */
+         .collection("orders")  /* 17.3 */
+         .doc(paymentIntent.id)  /* 17.3 */
+         .set({  /* 17.3 */
+             basket: basket,  /* 17.3 */
+             amount: paymentIntent.amount,  /* 17.3 */
+             created: paymentIntent.created  /* 17.3 */
+         })
+
 
         setSucceeded(true)  /* 16.4 */
         setError(null)  /* 16.4 */

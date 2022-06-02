@@ -36,7 +36,8 @@ app.post("/payments/create", async (request, response) => {
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
-    currency: "usd"
+    currency: "inr",
+     /* 16.6 error .... **** changed usd to inr because the default currency in your stripe account is inr so use that else payment method error comes and payment intent won't be created */
   });
 
   response.status(201).send({

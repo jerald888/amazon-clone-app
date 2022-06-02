@@ -5,7 +5,7 @@ import "./CheckoutProduct.css" // 6.2
 import { useStateValue } from '../data-layer/StateProvider' // 6.3
 
 
-function CheckoutProduct({id, image, title, price, rating}) { /* 6.2 **** don't forget curly{}.... else won't render */  
+function CheckoutProduct({id, image, title, price, rating, hideButton /* 17.5 hide button prop for hiding button in orders page */ }) { /* 6.2 **** don't forget curly{}.... else won't render */  
 
 const [{bucket}, dispatch] = useStateValue() // 6.3
 
@@ -40,8 +40,12 @@ const removeFromBasket = () => { /* 6.3 */
             ) )} 
         </div>
 
-        <button onClick = {removeFromBasket} >Remove from Basket</button>
-        {/* 6.3 don't put () for an arrow function else repeats alert with out clickink */}
+        {!hideButton && /* 17.5 only renders if there is no hidebutton prop */ ( 
+            <button onClick = {removeFromBasket} >Remove from Basket</button>
+            
+            )}
+            {/* 6.3 don't put () for an arrow function else repeats alert with out clickink */}
+
        
 
 
